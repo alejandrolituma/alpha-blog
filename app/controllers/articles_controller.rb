@@ -10,7 +10,9 @@ class ArticlesController < ApplicationController
   end
   
   def create
+    #debugger | ctrl+d to exit debugger
     @article = Article.new(article_params)
+    @article.user = User.first
     #@article.save
     #redirect_to article_path(@article)
     #What if validation does not pass, we need to take that into consideration
